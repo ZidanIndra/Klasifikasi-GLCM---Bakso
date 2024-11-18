@@ -11,7 +11,7 @@ Repository ini berisi program untuk mengekstraksi fitur gambar bakso menggunakan
 Klasifikasi-GLCM---Bakso/
 │
 ├── dataset/                 # Folder untuk menyimpan gambar bakso
-├── src/                     # Folder untuk script Python
+├── script/                     # Folder untuk script Python
 │   └── glcm_extraction.py   # Script utama untuk ekstraksi fitur GLCM
 ├── requirements.txt         # Daftar library yang dibutuhkan
 └── README.md                # Dokumentasi proyek
