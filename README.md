@@ -4,7 +4,13 @@ Repository ini berisi program untuk mengekstraksi fitur gambar bakso menggunakan
 ## Fitur Utama  
 - Ekstraksi fitur tekstur dari gambar menggunakan GLCM.  
 - Penyimpanan hasil ekstraksi fitur dalam format yang mudah dianalisis.  
-- Proyek ini cocok untuk pengembangan aplikasi klasifikasi berbasis gambar bakso.  
+- Proyek ini cocok untuk pengembangan aplikasi klasifikasi berbasis gambar bakso.
+
+## Library yang Digunakan  
+- **NumPy**: Untuk operasi array dan pengolahan data numerik.  
+- **OpenCV**: Untuk memproses gambar.  
+- **Scikit-Image**: Untuk ekstraksi fitur GLCM.  
+- **Matplotlib** *(opsional)*: Untuk visualisasi hasil.  
 
 ## Struktur Folder  
 ```
@@ -42,24 +48,23 @@ Sebelum menjalankan program, pastikan Anda memiliki:
    python src/glcm_extraction.py
    ```
 
-4. Hasil Analisis
-Pada penelitian ini, dilakukan ekstraksi fitur citra bakso menggunakan metode Gray Level Co-occurrence Matrix (GLCM). Fitur yang diekstraksi adalah Contrast dan Homogeneity pada saluran warna (Blue, Green, dan Red). Citra bakso diambil pada interval waktu yang berbeda (fresh, >4 jam, >8 jam, >12 jam, >16 jam, >20 jam, >24 jam, >28 jam) untuk menganalisis perubahan tekstur dan distribusi warna seiring waktu.
+## Hasil Analisis
+Pada penelitian ini, dilakukan ekstraksi fitur citra bakso menggunakan metode Gray Level Co-occurrence Matrix (GLCM). Fitur yang diekstraksi adalah Contrast, Homogeneity, Energy dan Correlation pada saluran warna (Blue, Green, dan Red). Citra bakso diambil pada interval waktu yang berbeda (fresh, >4 jam, >8 jam, >12 jam, >16 jam, >20 jam, >24 jam, >28 jam) untuk menganalisis perubahan tekstur dan distribusi warna seiring waktu.
 
+1. **Grafik Contrast dan Homogenity** 
 ![download (6)](https://github.com/user-attachments/assets/e4d8f572-93c1-4dd6-bc4c-2278a3ada58d)
 
-Grafik Atas (Contrast Across Blue, Green, Red Channels):
+- Grafik Atas (Contrast Across Blue, Green, Red Channels):
 Grafik ini menunjukkan nilai rata-rata contrast untuk setiap saluran warna. Nilai contrast cenderung menurun seiring waktu, yang mengindikasikan penurunan detail tekstur pada permukaan bakso.
-
-Grafik Bawah (Homogeneity Across Blue, Green, Red Channels):
+- Grafik Bawah (Homogeneity Across Blue, Green, Red Channels):
 Grafik ini menunjukkan nilai rata-rata homogeneity untuk setiap saluran warna. Nilai homogeneity cenderung meningkat seiring waktu, mengindikasikan distribusi warna pada citra bakso menjadi semakin seragam seiring proses perubahan.
 
+2. **Grafik Energy dan Correlation**
+![download](https://github.com/user-attachments/assets/8898c0a1-7c70-4c6b-a125-06800690779c)
 
+- Grafik Energy: Mengukur keteraturan pola intensitas piksel. Nilainya stabil pada awal (fresh hingga >8 jam) tetapi menurun di beberapa titik, mencerminkan perubahan tekstur permukaan bakso seiring waktu.
+- Grafik Correlation: Mengukur hubungan linear antar piksel. Nilainya cenderung stabil, namun ada fluktuasi, terutama penurunan signifikan pada saluran biru (>24 jam), menunjukkan perubahan distribusi intensitas piksel.
 
-## Library yang Digunakan  
-- **NumPy**: Untuk operasi array dan pengolahan data numerik.  
-- **OpenCV**: Untuk memproses gambar.  
-- **Scikit-Image**: Untuk ekstraksi fitur GLCM.  
-- **Matplotlib** *(opsional)*: Untuk visualisasi hasil.  
 
 ## Kontribusi  
 Kontribusi sangat diterima! Anda dapat:  
